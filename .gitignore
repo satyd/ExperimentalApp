@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+/.idea/vcs.xml
+/app/kers.txt
+/app/std
+/app/std.pub
