@@ -12,6 +12,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.levp.experimentalapp.implementation.AnalyticsLoggerImpl
+import com.levp.experimentalapp.interfaces.AnalyticsLogger
 import com.levp.experimentalapp.presentation.dialog.EnchantedDialog
 import com.levp.experimentalapp.presentation.ui.components.Greeting
 import com.levp.experimentalapp.presentation.ui.theme.ExperimentalAppTheme
@@ -19,9 +21,10 @@ import com.levp.experimentalapp.util.SOUND_TYPE
 import com.levp.experimentalapp.util.playSound
 
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImpl() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        registerLifecycleOwner(this)
         setContent {
             val sContext = LocalContext.current
             val openDialog = remember { mutableStateOf(false) }
