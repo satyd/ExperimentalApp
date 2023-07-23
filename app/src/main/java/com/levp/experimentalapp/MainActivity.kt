@@ -1,6 +1,9 @@
 package com.levp.experimentalapp
 
+import android.app.Service
+import android.content.Intent
 import android.os.Bundle
+import android.os.IBinder
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -54,5 +57,16 @@ class MainActivity : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImpl
 fun GreetingPreview() {
     ExperimentalAppTheme {
         Greeting("Android", {})
+    }
+}
+
+class JopaService: Service(){
+    override fun onBind(intent: Intent?): IBinder? {
+        TODO("Not yet implemented")
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        val doSomeStuff = {}
     }
 }
