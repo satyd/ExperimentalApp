@@ -7,18 +7,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun Greeting(
+fun MainButton(
     name: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column() {
-        Text(
-            text = "Hello $name!",
-            modifier = modifier
-        )
         Button(onClick = { onClick() }) {
-
+            Text(
+                text = "$name!",
+                modifier = modifier
+            )
         }
     }
 }

@@ -12,8 +12,6 @@ import com.levp.experimentalapp.res.sound.getRandomEnchantSoundId
 
 @Composable
 fun EnchantedDialog(onDismiss: () -> Unit) {
-
-
     AlertDialog(
         onDismissRequest = {
             onDismiss()
